@@ -145,57 +145,6 @@ ApexFin/
 
 ---
 
-## 🔌 REST API Endpoints
-
-### Authentication (`/api/auth`)
-- `POST /api/auth/register` — Register a new user account
-- `POST /api/auth/login` — Authenticate user and receive JWT token
-- `GET /api/auth/me` — Get current logged-in user profile *(Protected)*
-
-### Income Ledger (`/api/income`)
-- `GET /api/income` — List user's income records (supports `financialYear`, `query`, `category`, `month`, `year`)
-- `POST /api/income` — Create a new income entry
-- `GET /api/income/:id` — Get single income entry
-- `PUT /api/income/:id` — Update an income entry
-- `DELETE /api/income/:id` — Delete an income entry
-
-### Expense Ledger (`/api/expenses`)
-- `GET /api/expenses` — List user's expense records (supports `financialYear`, `query`, `category`, `month`, `year`)
-- `POST /api/expenses` — Create a new expense entry
-- `GET /api/expenses/:id` — Get single expense entry
-- `PUT /api/expenses/:id` — Update an expense entry
-- `DELETE /api/expenses/:id` — Delete an expense entry
-
-### Tax Deductions (`/api/deductions`)
-- `GET /api/deductions` — List user's declared tax deductions (supports `financialYear`)
-- `POST /api/deductions` — Declare a new tax deduction
-- `PUT /api/deductions/:id` — Update a deduction declaration
-- `DELETE /api/deductions/:id` — Delete a deduction declaration
-
-### Analytics & Tax Engine (`/api/analytics`)
-- `GET /api/analytics/summary` — Returns `totalIncome`, `totalExpenses`, `netProfit`, `profitMargin`, `totalDeductions`, `taxableIncomeOld`, `taxableIncomeNew`, `estimatedTaxOld`, `estimatedTaxNew`, and `recommendedRegime`
-- `GET /api/analytics/monthly` — Monthly aggregated income, expense, and net profit
-- `GET /api/analytics/categories` — Category-wise aggregation for incomes, expenses, and deductions
-- `GET /api/analytics/yearly` — Multi-year comparison grouped by `financialYear`
-- `GET /api/analytics/tax-slabs` — Fetch active tax slabs for display in the Taxpayer portal
-
-### Accountant Portal (`/api/accountant`) *(Role: Accountant / Admin)*
-- `GET /api/accountant/clients` — List all taxpayer clients with aggregated ledger & deduction stats
-- `GET /api/accountant/clients/:clientId/records` — Inspect a specific client's incomes, expenses, and deductions
-- `PUT /api/accountant/deductions/:id/status` — Approve (`Verified`) or reject (`Rejected`) a client's deduction claim
-
-### Admin Portal (`/api/admin`) *(Role: Admin)*
-- `GET /api/admin/stats` — System-wide counts for users, tax rules, financial years, and ledger transactions
-- `GET /api/admin/users` — List all registered users
-- `PUT /api/admin/users/:id/role` — Change a user's role (`User`, `Accountant`, `Admin`)
-- `DELETE /api/admin/users/:id` — Delete a user and cascade-delete their ledger/tax records
-- `GET /api/admin/tax-slabs` — List all configured tax slabs
-- `POST /api/admin/tax-slabs` — Create a new tax slab configuration for a regime and financial year
-- `PUT /api/admin/tax-slabs/:id` — Update a tax slab configuration
-- `DELETE /api/admin/tax-slabs/:id` — Delete a tax slab configuration
-
----
-
 ## 🚀 Getting Started Locally
 
 ### Prerequisites
