@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build outputs
+dist/
+build/
+client/dist/
+
+# Environment variables
+.env
+.env.*
+server/.env
+
+# Old separate source folders
+Apex-Ledger-main/
+ApexTax-main/
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
